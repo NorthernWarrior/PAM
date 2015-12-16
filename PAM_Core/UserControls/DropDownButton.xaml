@@ -1,0 +1,35 @@
+﻿<Button x:Class="PAM.UserControls.DropDownButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PAM.UserControls"
+             xmlns:con="clr-namespace:PAM.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             Click="Button_Click"
+             ContextMenuService.IsEnabled="False">
+    <Button.Resources>
+        <con:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+    </Button.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Image Source="{Binding Icon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:DropDownButton}}}"
+               Height="24"
+               Grid.Column="0"/>
+
+        <TextBlock Text="{Binding Label, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:DropDownButton}}}" 
+                   Visibility="{Binding Label, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:DropDownButton}}, Converter={StaticResource NullToVisibilityConverter}}"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Margin="5,0"
+                   Grid.Column="1"/>
+        
+        <Path Margin="4" VerticalAlignment="Center" Width="6" Fill="#FF527DB5" Stretch="Uniform" HorizontalAlignment="Right" Data="F1 M 301.14,-189.041L 311.57,-189.041L 306.355,-182.942L 301.14,-189.041 Z "
+              Grid.Column="2"/>
+    </Grid>
+</Button>

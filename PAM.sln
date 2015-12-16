@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAM_Hub", "PAM_Hub\PAM_Hub.csproj", "{4A9384D0-2CFE-4106-8095-3422ECFCDC79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAM_Core", "PAM_Core\PAM_Core.csproj", "{262D8314-4FD8-4846-BC9D-BF1E0A845672}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAM_Expenses", "PAM_Expenses\PAM_Expenses.csproj", "{4E68BEC0-5E07-4CC8-8592-CC736D684237}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A9384D0-2CFE-4106-8095-3422ECFCDC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A9384D0-2CFE-4106-8095-3422ECFCDC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A9384D0-2CFE-4106-8095-3422ECFCDC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A9384D0-2CFE-4106-8095-3422ECFCDC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{262D8314-4FD8-4846-BC9D-BF1E0A845672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{262D8314-4FD8-4846-BC9D-BF1E0A845672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{262D8314-4FD8-4846-BC9D-BF1E0A845672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{262D8314-4FD8-4846-BC9D-BF1E0A845672}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E68BEC0-5E07-4CC8-8592-CC736D684237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E68BEC0-5E07-4CC8-8592-CC736D684237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E68BEC0-5E07-4CC8-8592-CC736D684237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E68BEC0-5E07-4CC8-8592-CC736D684237}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
