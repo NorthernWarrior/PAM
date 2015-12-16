@@ -1,2 +1,2 @@
 # PAM
-PAM! - Your Personal Assistant Manager
+PAM! - Your Personal Assistant Machine
