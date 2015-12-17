@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Converter\AccountingColorConverter.cs" />
     <Compile Include="Converter\NullToVisibilityConverter.cs" />
+    <Compile Include="Interfaces\ICloneable.cs" />
+    <Compile Include="Interfaces\ICopyable.cs" />
     <Compile Include="MVVM\Command.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="MVVM\Model.cs" />

@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:PAM.ViewModels"
         xmlns:con="clr-namespace:PAM.Converter;assembly=PAM_Core"
         mc:Ignorable="d"
-        Height="600" Width="350"
+        Height="600" Width="450"
         Title="Expenses" 
         DataContext="{DynamicResource ExpensesViewModel}"
         Icon="pack://application:,,,/PAM_Core;component/Resources/expenses.ico">
@@ -16,17 +16,66 @@
         <vm:ExpensesViewModel x:Key="ExpensesViewModel" />
         <con:AccountingColorConverter x:Key="AccountingColorConverter" />
     </Window.Resources>
-    
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <DatePicker SelectedDate="{Binding CurrentExpense.Date, StringFormat=dd.MM.yyyy}"
+                        Margin="0, 0, 10, 0"
+                        Grid.Column="0" />
+            <TextBox Text="{Binding CurrentExpense.Value, StringFormat='{}{0:C}', ConverterCulture={x:Static sysglb:CultureInfo.CurrentUICulture}}"
+                     Foreground="{Binding CurrentExpense.Value, Converter={StaticResource AccountingColorConverter}}"
+                     HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                     Grid.Column="1" />
+            <TextBox Text="{Binding CurrentExpense.Description, UpdateSourceTrigger=PropertyChanged}"
+                     Margin="10, 0, 0, 0"
+                     HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                     Grid.Column="2" />
+        </Grid>
+
+        <Grid Margin="10, 0"
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Insert" 
+                    Margin="0, 0, 5, 0"
+                    Command="{Binding ExpenseInsertCommand}"
+                    Grid.Column="0"/>
+            <Button Content="Change" 
+                    Margin="5, 0"
+                    Command="{Binding ExpenseChangeCommand}"
+                    Grid.Column="1" />
+            <Button Content="Delete" 
+                    Margin="5, 0, 0, 0"
+                    Command="{Binding ExpenseDeleteCommand}"
+                    Grid.Column="2" />
+        </Grid>
+        
         <ListBox ItemsSource="{Binding Expenses}"
+                 SelectedItem="{Binding SelectedExpense}"
                  HorizontalContentAlignment="Stretch"
                  Margin="10"
-                 Grid.Row="1"  >
+                 Grid.Row="2"  >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid HorizontalAlignment="Stretch">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="110" />
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="3*" />
                         </Grid.ColumnDefinitions>
@@ -37,6 +86,7 @@
                                    Grid.Column="0" />
                         <TextBlock Text="{Binding Value, StringFormat='{}{0:C}', ConverterCulture={x:Static sysglb:CultureInfo.CurrentUICulture}}"
                                    Foreground="{Binding Value, Converter={StaticResource AccountingColorConverter}}"
+                                   Margin="0, 0, 5, 0"
                                    HorizontalAlignment="Right"
                                    Grid.Column="1" />
                         <TextBlock Text="{Binding Description}"
