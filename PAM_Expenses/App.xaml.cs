@@ -13,5 +13,9 @@ namespace PAM_Expenses
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+
+        }
     }
 }

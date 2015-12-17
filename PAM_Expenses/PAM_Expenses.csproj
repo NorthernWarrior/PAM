@@ -56,7 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\ExpensesView.xaml">
+    <Page Include="Views\ExpensesView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -64,8 +64,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModel\ExpensesViewModel.cs" />
-    <Compile Include="View\ExpensesView.xaml.cs">
+    <Compile Include="Models\Expense.cs" />
+    <Compile Include="ViewModels\ExpensesViewModel.cs" />
+    <Compile Include="Views\ExpensesView.xaml.cs">
       <DependentUpon>ExpensesView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
